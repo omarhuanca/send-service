@@ -15,9 +15,9 @@ export const sendTopic = async (req: Request, res: Response, next: NextFunction)
   try {
     const topic: string = get(req, 'body.topic', '');
     const title: string = get(req, 'body.title', '');
-    const body: string = get(req, 'body.body', '');
+    const content: string = get(req, 'body.content', '');
 
-    await firebase.sendTopic(topic, title, body);
+    await firebase.sendTopic(topic, title, content);
     successHandler.handleSuccess(200, 'sendTopic', res, next, data);
   } catch (error) {
     logger.info('ERROR: controller -> sendTopic', error);
@@ -29,9 +29,9 @@ export const sendSomeOne = async (req: Request, res: Response, next: NextFunctio
   try {
     const token: string = get(req, 'body.token', '');
     const title: string = get(req, 'body.title', '');
-    const body: string = get(req, 'body.body', '');
+    const content: string = get(req, 'body.content', '');
 
-    await firebase.sendSomeOne(token, title, body);
+    await firebase.sendSomeOne(token, title, content);
     successHandler.handleSuccess(200, 'sendSomeOne', res, next, data);
   } catch (error) {
     logger.info('ERROR: controller -> sendSomeOne', error);
@@ -43,9 +43,9 @@ export const sendArray = async (req: Request, res: Response, next: NextFunction)
   try {
     const tokens: string[] = get(req, 'body.tokens', []);
     const title: string = get(req, 'body.title', '');
-    const body: string = get(req, 'body.body', '');
+    const content: string = get(req, 'body.content', '');
 
-    await firebase.sendArray(tokens, title, body);
+    await firebase.sendArray(tokens, title, content);
     successHandler.handleSuccess(200, 'sendArray', res, next, data);
   } catch(error) {
     logger.info('ERROR: controller -> sendArray', error);
@@ -56,9 +56,9 @@ export const sendArray = async (req: Request, res: Response, next: NextFunction)
 export const sendAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const title: string = get(req, 'body.title', '');
-    const body: string = get(req, 'body.body', '');
+    const content: string = get(req, 'body.content', '');
 
-    await firebase.sendAll(title, body);
+    await firebase.sendAll(title, content);
     successHandler.handleSuccess(200, 'sendAll', res, next, data);
   } catch (error) {
     logger.info('ERROR: controller -> sendAll', error);

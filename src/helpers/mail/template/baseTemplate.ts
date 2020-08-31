@@ -8,7 +8,6 @@ export default (params: any): string => {
     <head>
       <meta charset='utf-8'/>
       <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
-      <title>${params.title}</title>
       <meta name='viewport' content='width=device-width, initial-scale=1'/>
       <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     </head>
@@ -17,17 +16,11 @@ export default (params: any): string => {
         <tbody>
           <tr>
             <td style="color: #4d90fe; font-size: 22px; border-bottom: 2px solid #4d90fe;">
-              ${params.name}
+              ${params.title}
             </td>
           </tr>
           <tr>
             <td style="color: #777; font-size: 16px; padding-top: 5px;">
-              DESCRIPTION
-              ${params.description}
-            </td>
-          </tr>
-          <tr>
-            <td>
               ${params.content}
             </td>
           </tr>

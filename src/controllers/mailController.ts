@@ -14,9 +14,9 @@ export const sendEmail = async (req: Request, res: Response, next: NextFunction)
     const template: string = get(req, 'body.template', '');
     const to: string = get(req, 'body.to', '');
     const subject: string = get(req, 'body.subject', '');
-    const body: any = get(req, 'body.data', {});
+    const content: any = get(req, 'body.data', {});
 
-    const data = await mailService.sendEmail(template, to, subject, body);
+    const data = await mailService.sendEmail(template, to, subject, content);
     successHandler.handleSuccess(200, 'Send email', res, next, data);
   } catch (error) {
     logger.info('ERROR: controller -> sendEmail', error);

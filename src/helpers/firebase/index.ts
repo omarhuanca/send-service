@@ -30,15 +30,15 @@ class Firebase {
       credential: admin.credential.cert(this.firebaseConfig)
     });
 
-    this.sendTopic = this.sendTopic.bind(this);
-    this.sendAll = this.sendAll.bind(this);
-    this.sendSomeOne = this.sendSomeOne.bind(this);
-    this.sendArray = this.sendArray.bind(this);
-
     this.subscribeTopic = this.subscribeTopic.bind(this);
     this.unsubscribeTopic = this.unsubscribeTopic.bind(this);
     this.turnOnNotification = this.turnOnNotification.bind(this);
     this.turnOffNotification = this.turnOffNotification.bind(this);
+
+    this.sendTopic = this.sendTopic.bind(this);
+    this.sendAll = this.sendAll.bind(this);
+    this.sendSomeOne = this.sendSomeOne.bind(this);
+    this.sendArray = this.sendArray.bind(this);
   }
 
   public subscribeTopic(token: string, topic: string) {

@@ -15,6 +15,6 @@ router.post('/subscribeTopic', [joiValidator(subscribeSchema)], subscribeTopic);
 router.post('/unsubscribeTopic', [joiValidator(subscribeSchema)], unsubscribeTopic);
 
 router.post('/turnOnNotification', [joiValidator(notificationSchema)], turnOnNotification);
-router.post('/turnOffNotication', [joiValidator(notificationSchema)], turnOffNotification);
+router.post('/turnOffNotification', [joiValidator(notificationSchema)], turnOffNotification);
 
 export default router;
