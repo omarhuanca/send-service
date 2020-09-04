@@ -1,0 +1,31 @@
+# Send Service
+
+## Environment Variables
+
+### AWS Email
+
+* AWS_KEY_ID
+* AWS_SECRET_ACCESS
+* AWS_REGION
+* AWS_VERSION_EMAIL
+
+### Firebase
+
+* FIREBASE_TOPIC_RECEIVE
+
+### Mail
+
+* SOURCE_EMAIL
+
+### Google
+
+* G_TYPE
+* G_PROJECT_ID
+* G_PRIVATE_KEY_ID
+* G_PRIVATE_KEY
+* G_CLIENT_EMAIL
+* G_CLIENT_ID
+* G_AUTH_URI
+* G_TOKEN_URI
+* G_AUTH_PROVIDER_URL
+* G_CLIENT_CERT_URL
