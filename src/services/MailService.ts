@@ -3,7 +3,7 @@ import logger from '@shared/Logger';
 
 class MailService {
 
-  public mail: Mail;
+  private mail: Mail;
 
   constructor() {
     this.mail = new Mail();
@@ -13,7 +13,7 @@ class MailService {
     try {
       await this.mail.sendEmail(template, to, subject, content);
     } catch (error) {
-      logger.error('TCL: findUser -> e', error);
+      logger.error('TCL: sendEmail -> e', error);
       throw error;
     }
   }

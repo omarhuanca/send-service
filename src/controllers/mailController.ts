@@ -4,9 +4,9 @@ import { get } from 'lodash';
 import SuccessHandler from '@helpers/successHandler/index';
 import ErrorHandler from '@helpers/errorHandler/index';
 import logger from '@shared/Logger';
-import MailService from '@services/mailService';
+import MailService from '@services/MailService';
 
-const mailService = new MailService();
+const service = new MailService();
 const successHandler = new SuccessHandler();
 
 export const sendEmail = async (req: Request, res: Response, next: NextFunction) => {
@@ -15,9 +15,9 @@ export const sendEmail = async (req: Request, res: Response, next: NextFunction)
     const to: string = get(req, 'body.to', '');
     const subject: string = get(req, 'body.subject', '');
     const content: any = get(req, 'body.data', {});
+    const data = await service.sendEmail(template, to, subject, content);
 
-    const data = await mailService.sendEmail(template, to, subject, content);
-    successHandler.handleSuccess(200, 'Send email', res, next, data);
+    successHandler.handleSuccess(200, 'sent', res, next, data);
   } catch (error) {
     logger.info('ERROR: controller -> sendEmail', error);
     next(new ErrorHandler(500, 'Mail Error'));
